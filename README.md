@@ -7,8 +7,8 @@
 
 Додаткових налаштувань не потребує
 
-Запуск docker-compose up -d 
-UI http://localhost:8503/
+<p>Запуск docker-compose up -d</p> 
+<p>UI http://localhost:8503/</>
 
 Реалізовані 3 tools
 <ul>
