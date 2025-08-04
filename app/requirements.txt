@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-community
+langchain_openai
+openai
+chromadb
+pypdf
+requests
+pydantic-settings
+python-dotenv
+fitz
+pymupdf
+frontend
+tools

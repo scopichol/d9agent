@@ -1,0 +1,20 @@
+# Обираємо базовий образ з Python 3.10
+FROM python:3.10-slim
+
+# Встановлюємо робочу директорію в контейнері
+WORKDIR /app
+
+# Копіюємо файли проєкту в контейнер
+COPY . /app
+
+# Встановлюємо залежності
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Виставляємо змінні оточення для OpenAI ключа, якщо треба
+ENV OPENAI_API_KEY=your_openai_api_key_here
+
+# Відкриваємо порт (наприклад, 8000, якщо це FastAPI)
+EXPOSE 8000
+
+# Команда запуску (змінити під ваш сервер)
+CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
