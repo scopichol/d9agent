@@ -7,10 +7,10 @@
 
 Додаткових налаштувань не потребує
 
-Запуск docker-compose up -d
+Запуск docker-compose up -d 
+UI http://localhost:8503/
 
 Реалізовані 3 tools
-
 <ul>
 <li><strong>refuel_tool</strong> - бульякий текст що пов'язаний з завантаженням палива і об'єм. 
     <h3>Наприклад:</h3>
