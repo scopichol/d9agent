@@ -150,7 +150,7 @@ def create_agent_executor():
 
     refuel_tool = Tool.from_function(
         name="refuel",
-        description="Завантаження палива в корабель в кілограмах. Інші одиниці віміру потрібно конвертувати в кілограми",
+        description="Завантаження палива в корабель в кілограмах. Інші одиниці віміру потрібно конвертувати в кілограми. паливо тільки керосин. при конвертації викликати tool один раз",
         func=lambda question: refuel(question)
     )
     shipstate_tool = Tool.from_function(
@@ -160,12 +160,12 @@ def create_agent_executor():
     )
     start_engine_tool = Tool.from_function(
         name="start_engine",
-        description="включає двигун корабля. потрібно вказати кількиість палива треба витратити, час роботи двигуна і кут нахилу корабля в градусах. Нульова витрата пального означає очікування без вмикання",
+        description="включає двигун корабля. потрібно вказати кількиість палива треба витратити в кілограмах, час роботи двигуна в секундах і кут нахилу корабля в градусах. Нульова витрата пального означає очікування без вмикання",
         func=lambda question: start_engine(question)
     )
 
     tools = [refuel_tool,shipstate_tool,start_engine_tool]
-
+ 
     context = 'Мова йде про керування малим космічним кораблем типу Контікі. Стан зберігається в state.ship'
     prompt = OpenAIFunctionsAgent.create_prompt(
         system_message=context,  # Стаціонарний контекст
